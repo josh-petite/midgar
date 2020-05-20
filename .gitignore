@@ -1,3 +1,10 @@
+# Visual Studio
+/.vs
+
+# Built Artifacts
+/bin
+/bin-int
+
 # Prerequisites
 *.d
 
