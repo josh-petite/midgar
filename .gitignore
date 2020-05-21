@@ -1,7 +1,10 @@
+# Submodules
+/Midgar/vendor
+
 # Visual Studio
 /.vs
 
-# Built Artifacts
+# Build Artifacts
 /bin
 /bin-int
 

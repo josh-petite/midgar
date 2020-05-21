@@ -1,0 +1,3 @@
+[submodule "Midgar\\vendor\\spdlog"]
+	path = Midgar\\vendor\\spdlog
+	url = https://github.com/gabime/spdlog

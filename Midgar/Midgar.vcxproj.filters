@@ -27,9 +27,15 @@
     <ClInclude Include="src\Midgar\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Midgar\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Midgar\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Midgar\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
