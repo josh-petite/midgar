@@ -1,3 +1,4 @@
+#include "mgpch.h"
 #include <Midgar.h>
 
 class Sandbox : public Midgar::Application
@@ -14,5 +15,6 @@ public:
 
 Midgar::Application* Midgar::CreateApplication()
 {
+	MG_INFO("Info log");
 	return new Sandbox();
 }

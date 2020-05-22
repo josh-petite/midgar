@@ -1,12 +1,13 @@
 #pragma once
 
-#include <memory>
-
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Midgar 
 {
+	template class MIDGAR_API std::shared_ptr<spdlog::logger>;
+
 	class MIDGAR_API Log
 	{
 	public:

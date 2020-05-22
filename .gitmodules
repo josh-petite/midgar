@@ -1,3 +1,6 @@
 [submodule "Midgar\\vendor\\spdlog"]
 	path = Midgar\\vendor\\spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Midgar/vendor/GLFW"]
+	path = Midgar/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
