@@ -20,7 +20,7 @@ namespace Midgar
 	};
 }
 
-#define MG_CORE_TRACE(...) ::Midgar::Log::GetEngineLogger()-trace(__VA_ARGS__)
+#define MG_CORE_TRACE(...) ::Midgar::Log::GetEngineLogger()->trace(__VA_ARGS__)
 #define MG_CORE_INFO(...)  ::Midgar::Log::GetEngineLogger()->info(__VA_ARGS__)
 #define MG_CORE_WARN(...)  ::Midgar::Log::GetEngineLogger()->warn(__VA_ARGS__)
 #define MG_CORE_ERROR(...) ::Midgar::Log::GetEngineLogger()->error(__VA_ARGS__)

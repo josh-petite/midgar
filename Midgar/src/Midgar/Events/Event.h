@@ -38,10 +38,8 @@ namespace Midgar
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category)
-		{
-			return GetCategoryFlags() & category;
-		}
+		inline bool IsInCategory(EventCategory category) { return GetCategoryFlags() & category; }
+		inline bool IsHandled() { return isHandled; }
 	protected:
 		bool isHandled = false;
 	};

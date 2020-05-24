@@ -10,6 +10,12 @@ workspace "Midgar"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Midgar/vendor/GLFW/include"
+
+include "Midgar/vendor/GLFW"
+
 project "Midgar"
 	location "Midgar"
 	kind "SharedLib"
@@ -31,7 +37,14 @@ project "Midgar"
 	{
 		".",
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -51,15 +64,18 @@ project "Midgar"
 		}
 
 	filter "configurations:Debug"
-		defines "MG_DEBUG"
+		defines { "MG_DEBUG", "MG_ENABLE_ASSERTS" }
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "MG_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "MG_DIST"
+		buildoptions "/MD"
 		optimize "On"
 		
 project "Sandbox"
@@ -99,12 +115,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "MG_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "MG_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "MG_DIST"
+		buildoptions "/MD"
 		optimize "On"
