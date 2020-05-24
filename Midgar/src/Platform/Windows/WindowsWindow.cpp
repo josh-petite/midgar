@@ -5,6 +5,8 @@
 #include "Midgar/Events/KeyEvent.h"
 #include "Midgar/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Midgar
 {
 	static bool GLFWInitialized = false;
@@ -48,6 +50,10 @@ namespace Midgar
 
 		window = glfwCreateWindow((int)props.Width, (int)props.Height, data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		MG_CORE_ASSERT(status, "Failed to initialize Glad!");
+
 		glfwSetWindowUserPointer(window, &data);
 		SetVSync(true);
 

@@ -1,5 +1,6 @@
 # Submodules
-/Midgar/vendor
+/Midgar/vendor/GLFW
+/Midgar/vendor/spdlog
 
 # Visual Studio
 /.vs
@@ -7,6 +8,8 @@
 # Build Artifacts
 /bin
 /bin-int
+Midgar/vendor/**/bin
+Midgar/vendor/**/bin-int
 
 # Solution files
 Midgar.sln

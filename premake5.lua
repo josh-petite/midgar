@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Midgar/vendor/GLFW/include"
+IncludeDir["Glad"] = "Midgar/vendor/Glad/include"
 
 include "Midgar/vendor/GLFW"
+include "Midgar/vendor/Glad"
 
 project "Midgar"
 	location "Midgar"
@@ -38,12 +40,14 @@ project "Midgar"
 		".",
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "Midgar"
 		defines
 		{
 			"MG_PLATFORM_WINDOWS",
-			"MG_BUILD_DLL"
+			"MG_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
