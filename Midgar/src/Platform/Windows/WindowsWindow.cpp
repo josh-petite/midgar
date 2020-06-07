@@ -76,6 +76,14 @@ namespace Midgar
 			}
 		);
 
+		glfwSetCharCallback(window, [](GLFWwindow* window, unsigned int key)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypedEvent event(key);
+				data.EventCallback(event);
+			}
+		);
+
 		glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);			

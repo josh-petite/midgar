@@ -9,7 +9,7 @@ namespace Midgar
 	public:
 		inline int GetMouseButton() const { return button; }
 
-		EVENT_CLASS_CATEGORY(Mouse | Input)
+		EVENT_CLASS_CATEGORY(MouseEventCategory | InputEventCategory)
 	protected:
 		MouseButtonEvent(int button) : button(button) {}
 		int button;
@@ -64,7 +64,7 @@ namespace Midgar
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
-		EVENT_CLASS_CATEGORY(Mouse | Input)
+		EVENT_CLASS_CATEGORY(MouseEventCategory | InputEventCategory)
 	private:
 		float mouseX;
 		float mouseY;
@@ -87,7 +87,7 @@ namespace Midgar
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled)
-		EVENT_CLASS_CATEGORY(Mouse | Input)
+		EVENT_CLASS_CATEGORY(MouseEventCategory | InputEventCategory)
 	private:
 		float xOffset;
 		float yOffset;

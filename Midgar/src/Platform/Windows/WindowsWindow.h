@@ -21,13 +21,12 @@ namespace Midgar
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 
-		inline void SetEventCallback(const EventCallbackFn& callback) override
-		{
-			data.EventCallback = callback;
-		}
+		inline void SetEventCallback(const EventCallbackFn& callback) override { data.EventCallback = callback; }
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
+
+		inline virtual void* GetNativeWindow() const { return window; }
 	private:
 		GLFWwindow* window;
 

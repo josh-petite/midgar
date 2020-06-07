@@ -20,3 +20,10 @@
 
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 #define BIT(x) (1 << x)
+
+//struct Vec2
+//{
+//	float x, y;
+//	Vec2() { x = y = 0.0f; }
+//	Vec2(float _x, float _y) { x = _x; y = _y; }
+//};

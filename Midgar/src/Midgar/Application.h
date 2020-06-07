@@ -19,12 +19,17 @@ namespace Midgar
 		void OnEvent(Event& e);
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
+
+		inline static Application& Get() { return *Instance; }
+		inline Window& GetWindow() { return *window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& event);
 
 		std::unique_ptr<Window> window;
 		bool isRunning = true;
 		LayerStack layerStack;
+	private:
+		static Application* Instance;
 	};
 
 	// To be defined in client

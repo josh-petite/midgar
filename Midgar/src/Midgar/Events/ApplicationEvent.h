@@ -9,7 +9,7 @@ namespace Midgar
 		AppRenderEvent() {}
 
 		EVENT_CLASS_TYPE(AppRender)
-		EVENT_CLASS_CATEGORY(App)
+		EVENT_CLASS_CATEGORY(AppEventCategory)
 	};
 
 	class MIDGAR_API AppTickEvent : public Event
@@ -17,7 +17,7 @@ namespace Midgar
 		AppTickEvent() {}
 
 		EVENT_CLASS_TYPE(AppTick)
-		EVENT_CLASS_CATEGORY(App)
+		EVENT_CLASS_CATEGORY(AppEventCategory)
 	};
 
 	class MIDGAR_API AppUpdateEvent : public Event
@@ -25,7 +25,7 @@ namespace Midgar
 		AppUpdateEvent() {}
 
 		EVENT_CLASS_TYPE(AppUpdate)
-		EVENT_CLASS_CATEGORY(App)
+		EVENT_CLASS_CATEGORY(AppEventCategory)
 	};
 
 	class MIDGAR_API WindowCloseEvent : public Event
@@ -34,7 +34,7 @@ namespace Midgar
 		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose)
-		EVENT_CLASS_CATEGORY(App)
+		EVENT_CLASS_CATEGORY(AppEventCategory)
 	};
 
 	class MIDGAR_API WindowResizeEvent : public Event
@@ -53,7 +53,7 @@ namespace Midgar
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
-		EVENT_CLASS_CATEGORY(App)
+		EVENT_CLASS_CATEGORY(AppEventCategory)
 	private:
 		unsigned int width;
 		unsigned int height;

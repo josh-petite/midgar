@@ -9,7 +9,7 @@ namespace Midgar
 	public:
 		inline int GetKeyCode() const { return keycode; }
 
-		EVENT_CLASS_CATEGORY(Keyboard | Input)
+		EVENT_CLASS_CATEGORY(KeyboardEventCategory | InputEventCategory)
 	protected:
 		KeyEvent(int keycode) : keycode(keycode) {}
 
@@ -50,5 +50,21 @@ namespace Midgar
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
+	};
+	
+	class MIDGAR_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << keycode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
 	};
 }

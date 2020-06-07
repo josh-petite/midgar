@@ -9,18 +9,18 @@ namespace Midgar
 		None = 0,
 		WindowClose, WindowFocus, WindowLostFocus, WindowMoved, WindowResize,
 		AppRender, AppTick, AppUpdate,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 	enum EventCategory
 	{
-		None		= 0,
-		App			= BIT(0),
-		Input		= BIT(1),
-		Keyboard	= BIT(2),
-		Mouse		= BIT(3),
-		MouseButton	= BIT(4)
+		None					 = 0,
+		AppEventCategory		 = BIT(0),
+		InputEventCategory		 = BIT(1),
+		KeyboardEventCategory	 = BIT(2),
+		MouseEventCategory		 = BIT(3),
+		MouseButtonEventCategory = BIT(4)
 	};
 
 #define EVENT_CLASS_TYPE(type)	static EventType GetStaticType() { return EventType::##type; }\

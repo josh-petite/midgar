@@ -8,7 +8,7 @@ public:
 
 	void OnUpdate() override
 	{
-		MG_INFO("ExampleLayer::Update");
+		//MG_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Midgar::Event& event) override
@@ -23,6 +23,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Midgar::ImGuiLayer());
 	}
 
 	~Sandbox()
