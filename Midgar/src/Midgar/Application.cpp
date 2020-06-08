@@ -48,9 +48,6 @@ namespace Midgar
 			for (Layer* layer : layerStack)
 				layer->OnUpdate();
 
-			auto [x, y] = Input::GetMousePosition();
-			MG_CORE_TRACE("{0}, {1}", x, y);
-
 			window->OnUpdate();
 		}
 	}

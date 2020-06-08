@@ -9,11 +9,13 @@ public:
 	void OnUpdate() override
 	{
 		//MG_INFO("ExampleLayer::Update");
+		if (Midgar::Input::IsKeyPressed(MG_KEY_TAB))
+			MG_INFO("Key tab pressed");
 	}
 
 	void OnEvent(Midgar::Event& event) override
 	{
-		MG_TRACE("{0}", event);
+		//MG_TRACE("{0}", event);
 	}
 };
 
