@@ -13,8 +13,12 @@ namespace Midgar
 		MG_CORE_ASSERT(!Instance, "Application already exists!");
 		Instance = this;
 
+		imGuiLayer = new ImGuiLayer();
+
 		window = std::unique_ptr<Window>(Window::Create());
 		window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+		PushOverlay(imGuiLayer);
 	}
 
 	Application::~Application()
@@ -48,8 +52,19 @@ namespace Midgar
 			for (Layer* layer : layerStack)
 				layer->OnUpdate();
 
+			RenderImGuiLayers();
 			window->OnUpdate();
 		}
+	}
+
+	void Application::RenderImGuiLayers()
+	{
+		imGuiLayer->Begin();
+
+		for (Layer* layer : layerStack)
+			layer->OnImGuiRender();
+
+		imGuiLayer->End();
 	}
 
 	void Application::PushLayer(Layer* layer)

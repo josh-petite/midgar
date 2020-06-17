@@ -1,10 +1,10 @@
 #pragma once
 
 #include "Midgar/Layer.h"
-#include "Midgar/Events/Event.h"
-#include "Midgar/Events/ApplicationEvent.h"
-#include "Midgar/Events/MouseEvent.h"
-#include "Midgar/Events/KeyEvent.h"
+//#include "Midgar/Events/Event.h"
+//#include "Midgar/Events/ApplicationEvent.h"
+//#include "Midgar/Events/MouseEvent.h"
+//#include "Midgar/Events/KeyEvent.h"
 
 namespace Midgar
 {
@@ -14,20 +14,13 @@ namespace Midgar
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-		void OnEvent(Event& event);		
-	private:
-		bool OnKeyPressed(KeyPressedEvent& event);
-		bool OnKeyReleased(KeyReleasedEvent& event);
-		bool OnKeyTyped(KeyTypedEvent& event);
-		bool OnMouseMoved(MouseMovedEvent& event);
-		bool OnMouseButtonPressed(MouseButtonPressedEvent& event);
-		bool OnMouseButtonReleased(MouseButtonReleasedEvent& event);
-		bool OnMouseScrolled(MouseScrolledEvent& event);
-		bool OnWindowResized(WindowResizeEvent& event);
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
 
+		void Begin();
+		void End();
+	private:		
 		float time = 0.0f;
 	};
 }

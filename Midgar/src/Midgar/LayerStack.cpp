@@ -5,7 +5,6 @@ namespace Midgar
 {
 	LayerStack::LayerStack()
 	{
-		layerInsert = layers.begin();
 	}
 
 	LayerStack::~LayerStack()
@@ -16,7 +15,8 @@ namespace Midgar
 
 	void LayerStack::PushLayer(Layer* layer)
 	{
-		layerInsert = layers.emplace(layerInsert, layer);
+		layers.emplace(layers.begin() + layerInsertIndex, layer);
+		layerInsertIndex++;
 	}	
 
 	void LayerStack::PopLayer(Layer* layer)
@@ -26,7 +26,7 @@ namespace Midgar
 			return;
 
 		layers.erase(it);
-		layerInsert--;
+		layerInsertIndex--;
 	}
 
 	void LayerStack::PushOverlay(Layer* overlay)

@@ -25,6 +25,6 @@ namespace Midgar
 		LayersIter end() { return layers.end(); }
 	private:
 		Layers layers;
-		LayersIter layerInsert;
+		unsigned int layerInsertIndex = 0;
 	};
 }

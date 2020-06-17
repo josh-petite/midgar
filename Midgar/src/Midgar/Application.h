@@ -7,6 +7,8 @@
 #include "Midgar/Events/Event.h"
 #include "Midgar/Events/ApplicationEvent.h"
 
+#include "Midgar/ImGui/ImGuiLayer.h"
+
 namespace Midgar
 {
 	class MIDGAR_API Application
@@ -24,8 +26,12 @@ namespace Midgar
 		inline Window& GetWindow() { return *window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& event);
+		void RenderImGuiLayers();
+
+		ImGuiLayer* imGuiLayer;
 
 		std::unique_ptr<Window> window;
+		
 		bool isRunning = true;
 		LayerStack layerStack;
 	private:

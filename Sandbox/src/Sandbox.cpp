@@ -1,6 +1,8 @@
 #include "mgpch.h"
 #include <Midgar.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Midgar::Layer
 {
 public:
@@ -11,6 +13,14 @@ public:
 		//MG_INFO("ExampleLayer::Update");
 		if (Midgar::Input::IsKeyPressed(MG_KEY_TAB))
 			MG_INFO("Key tab pressed");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		static bool open = true;
+		ImGui::Begin("in example", &open, ImGuiWindowFlags_ChildWindow);
+		ImGui::Text("Hello World!");
+		ImGui::End();
 	}
 
 	void OnEvent(Midgar::Event& event) override
@@ -24,8 +34,7 @@ class Sandbox : public Midgar::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
-		PushOverlay(new Midgar::ImGuiLayer());
+		PushLayer(new ExampleLayer());		
 	}
 
 	~Sandbox()

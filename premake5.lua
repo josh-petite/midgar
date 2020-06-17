@@ -109,6 +109,7 @@ project "Sandbox"
 	{
 		"Midgar/vendor/spdlog/include",
 		"Midgar/src",
+		"Midgar/vendor",
 		"%{IncludeDir.glm}"
 	}
 
