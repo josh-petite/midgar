@@ -7,3 +7,6 @@
 [submodule "Midgar/vendor/imgui"]
 	path = Midgar/vendor/imgui
 	url = https://github.com/josh28/imgui
+[submodule "Midgar\\vendor\\glm"]
+	path = Midgar\\vendor\\glm
+	url = https://github.com/g-truc/glm.git
