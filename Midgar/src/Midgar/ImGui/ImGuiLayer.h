@@ -1,10 +1,6 @@
 #pragma once
 
 #include "Midgar/Layer.h"
-//#include "Midgar/Events/Event.h"
-//#include "Midgar/Events/ApplicationEvent.h"
-//#include "Midgar/Events/MouseEvent.h"
-//#include "Midgar/Events/KeyEvent.h"
 
 namespace Midgar
 {

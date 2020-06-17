@@ -18,7 +18,7 @@ public:
 	virtual void OnImGuiRender() override
 	{
 		static bool open = true;
-		ImGui::Begin("in example", &open, ImGuiWindowFlags_ChildWindow);
+		ImGui::Begin("in example");//, &open, ImGuiWindowFlags_ChildWindow);
 		ImGui::Text("Hello World!");
 		ImGui::End();
 	}
@@ -44,6 +44,6 @@ public:
 
 Midgar::Application* Midgar::CreateApplication()
 {
-	MG_INFO("Info log");
+	MG_INFO("Sandbox starting...");
 	return new Sandbox();
 }
