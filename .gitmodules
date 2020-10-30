@@ -1,12 +1,20 @@
-[submodule "Midgar\\vendor\\spdlog"]
-	path = Midgar\\vendor\\spdlog
-	url = https://github.com/gabime/spdlog
-[submodule "Midgar\\vendor\\GLFW"]
-	path = Midgar\\vendor\\GLFW
-	url = https://github.com/josh28/GLFW
+[submodule "Midgar/vendor/spdlog"]
+	path = Midgar/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+	branch = master
+	ignore = dirty
+[submodule "Midgar/vendor/GLFW"]
+    path = Midgar/vendor/GLFW
+    url = https://github.com/josh28/glfw.git
+    branch = master
+    ignore = dirty
 [submodule "Midgar/vendor/imgui"]
 	path = Midgar/vendor/imgui
-	url = https://github.com/josh28/imgui
-[submodule "Midgar\\vendor\\glm"]
-	path = Midgar\\vendor\\glm
+	url = https://github.com/josh28/imgui.git
+	branch = master
+	ignore = dirty
+[submodule "Midgar/vendor/glm"]
+	path = Midgar/vendor/glm
 	url = https://github.com/g-truc/glm.git
+	branch = master
+	ignore = dirty
