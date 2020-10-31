@@ -1,7 +1,7 @@
 [submodule "Midgar/vendor/spdlog"]
 	path = Midgar/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
-	branch = master
+	branch = v1.x
 	ignore = dirty
 [submodule "Midgar/vendor/GLFW"]
     path = Midgar/vendor/GLFW
@@ -11,7 +11,7 @@
 [submodule "Midgar/vendor/imgui"]
 	path = Midgar/vendor/imgui
 	url = https://github.com/josh28/imgui.git
-	branch = master
+	branch = docking
 	ignore = dirty
 [submodule "Midgar/vendor/glm"]
 	path = Midgar/vendor/glm

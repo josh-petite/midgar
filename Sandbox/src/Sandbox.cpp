@@ -17,10 +17,12 @@ public:
 
 	virtual void OnImGuiRender() override
 	{
-		static bool open = true;
-		ImGui::Begin("in example");//, &open, ImGuiWindowFlags_ChildWindow);
+		// this is broken for some reason, won't compile -- linker errors.
+		// need to investigate more
+		/*static bool open = true;
+		ImGui::Begin("in example", &open, ImGuiWindowFlags_ChildWindow);
 		ImGui::Text("Hello World!");
-		ImGui::End();
+		ImGui::End();*/
 	}
 
 	void OnEvent(Midgar::Event& event) override
